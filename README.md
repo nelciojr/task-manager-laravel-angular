@@ -105,13 +105,28 @@ make artisan-seed
 
 ### Usuários
 
-| Método | Rota               | Descrição                       | Status esperado |
-|--------|--------------------|---------------------------------|----------------|
-| GET    | /api/users         | Lista todos os usuários         | 200 OK |
-| GET    | /api/users/{id}    | Detalha um usuário específico   | 200 OK / 404 Not Found |
-| POST   | /api/users         | Cria um novo usuário            | 201 Created / 422 Unprocessable Entity |
-| PUT    | /api/users/{id}    | Atualiza dados do usuário       | 200 OK / 404 Not Found / 422 Unprocessable Entity |
-| DELETE | /api/users/{id}    | Remove um usuário               | 200 OK / 404 Not Found |
+| Método | Rota            | Descrição                       | Status esperado |
+|--------|-----------------|---------------------------------|----------------|
+| GET    | /api/users      | Lista todos os usuários         | 200 OK |
+| GET    | /api/users/{id} | Detalha um usuário específico   | 200 OK / 404 Not Found |
+| PUT    | /api/users/{id} | Atualiza dados do usuário       | 200 OK / 404 Not Found / 422 Unprocessable Entity |
+| DELETE | /api/users/{id} | Remove um usuário               | 200 OK / 404 Not Found |
+
+### Registro de Usuário
+
+| Método | Rota            | Descrição                       | Status esperado                                         |
+|--------|-----------------|---------------------------------|---------------------------------------------------------|
+| POST   | /api/register      | Cria um novo usuário        | 201 Created / 422 Unprocessable Entity: Validação falho |
+
+***Request Body:***
+```
+{
+"name": "Nome do Usuário",
+"email": "email@example.com",
+"password": "password"
+}
+```
+
 
 ## Fluxo da aplicação
 
