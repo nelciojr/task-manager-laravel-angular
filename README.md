@@ -8,7 +8,7 @@ Inclui autenticação JWT, refresh token automático, ambiente dockerizado e int
 ## Tecnologias utilizadas
 
 - **Backend**
-  - Laravel 11
+  - Laravel 10
   - JWT Auth (tymon/jwt-auth)
   - MySQL
   - Docker
@@ -23,6 +23,17 @@ Inclui autenticação JWT, refresh token automático, ambiente dockerizado e int
 - **DevOps**
   - Docker / Docker Compose
   - Makefile para automação
+
+
+- **Configuração de Segurança com Nginx**
+
+  Este projeto utiliza o Nginx como proxy reverso para garantir mais segurança e performance na aplicação.
+  Benefícios da utilização do Nginx:
+  - Proxy reverso protegendo diretamente a aplicação Laravel
+  - Camada adicional de segurança HTTP
+  - Redirecionamento de rotas para melhor organização das requisições
+  - Controle de acesso aos arquivos sensíveis da aplicação
+  - Preparação futura para HTTPS (SSL/TLS)
 
 ## Funcionalidades
 
@@ -55,8 +66,8 @@ Makefile
 Clone o projeto:
 
 ```
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto
+git clone https://github.com/nelciojr/task-manager-laravel-angular
+cd task-manager-laravel-angular
 ```
 
 Suba os containers:
@@ -67,7 +78,7 @@ make full-setup
 
 Acesse:
 - Frontend: http://localhost:4200
-- Backend API: http://localhost/api
+- Backend API: http://localhost:8000/api
 
 ### Banco de dados
 - Host: localhost
@@ -130,5 +141,8 @@ make artisan-seed
 - Filtro e paginação na listagem de usuários
 - Perfil de usuário: Admin / User para permissões avançadas
 - Testes automatizados e integração contínua (CI/CD)
+- Configurar HTTPS com certificado SSL (Let's Encrypt ou outro)
+- Configurar cache estático para melhorar performance
+- Implementar rate limiting para prevenir ataques de força bruta
 
 
